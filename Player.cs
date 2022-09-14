@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+
 namespace pokemon
 {
     public class Player
@@ -12,10 +14,21 @@ namespace pokemon
             this.visitedPlaces.Add((new Position()));
         }
 
+        private bool ValidateInput(string input)
+        {
+            Regex r = new Regex("[^NSEO]");
+            return (!r.IsMatch(input));
+        }
+
         ///Change the current position of player according direction
         public void Move(string input)
         {
             char[] directions;
+            input = input.ToUpper();
+            if (!ValidateInput(input))
+            {
+                throw new ArgumentException("A entrada possui caracteres que não correspondem a direção.");
+            }
             directions = input.ToCharArray();
             foreach (var direction in directions)
             {
