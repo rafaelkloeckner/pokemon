@@ -26,5 +26,12 @@ A tua solução deve ser correta (do ponto de vista funcional) e eficiente (temp
 - marcação dos locais já visitados
 - contagem da quantidade de pokemons capturados
 - saída da quantidade de pokemons capturados
+- criar testes
 
-criar testes unitários
+## Instruções para execução
+*Requisitos: é necessário o .NET6.0 instalado*
+Crie um pasta para colocar os arquivos.
+- Para rodar o a solução
+`dotnet run`
+- Para rodas os testes
+`dotnet test`
